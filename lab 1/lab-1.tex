@@ -1,0 +1,68 @@
+% !TeX program = pdflatex
+\documentclass[russian,utf8,simple]{eskdtext}
+
+% packages
+%
+% Тестовое наполнение текстом
+% При написании работы - удалить пакет и комманды \lipsum
+\usepackage{lipsum}
+%
+\usepackage{graphicx}
+\usepackage{datetime}
+\usepackage{enumitem} % for lists
+\usepackage{ulem} % for underlining
+\usepackage{lastpage} % Number of pages
+\usepackage{hyperref} % Links in pdf
+
+% setup
+\newcommand{\FrontPageDepartment}{ФИТ} %Факультет
+\newcommand{\FrontPageSubdepartment}{Сапр} %Кафедра
+\newcommand{\WorkType}{Лабораторная работа №1} %Тип работы (заголовок)
+\newcommand{\Subject}{Инструментальные средсва разрабодки  ПО} %по ... родительный падеж
+\newcommand{\Topic}{Работа с LaTex и GitHub.} %Тема
+\newcommand{\Professor}{Пугин~Е.~Г.} %Руководитель
+\newcommand{\Student}{Мартояс~И.~С.} %Студент
+\newcommand{\Group}{ПКС-115} %Группа
+\newcommand{\FrontPageDate}{\ddmmyyyydate\today} %Дата
+
+\ESKDsignature{МИВУ 09.62.03} % Код специальности и тип работы
+
+% eskdx setup
+\ESKDletter{}{У}{}
+\ESKDtitle{\Topic}
+\ESKDchecker{\Professor}
+\ESKDauthor{\Student}
+\ESKDcolumnIX{МИ ВлГУ\\ \Group}
+
+\addto\captionsrussian{\def\refname{Список использованных источников}}
+\sloppy % split long lines
+
+\input{src/setup.tex}
+
+% main document
+\begin{document}
+% Титул
+\ESKDthisStyle{title}
+\input{src/frontpage.tex}
+\newpage
+
+% Аннотация
+%\ESKDthisStyle{empty}
+%\input{src/annotation.tex}
+%\newpage
+
+% Содержание
+%\setcounter{page}{4}
+\ESKDthisStyle{formII}
+%\tableofcontents
+%\newpage
+
+% Основной текст
+\input{src/text.tex}
+\newpage
+%\newpage в эиом месте перенос на новаую страница
+
+% Список литературы
+%\input{src/bibliography.tex}
+%\input{src/bibliography.tex}  подключение в конец (т.к. файл идёт последний по счёту) файла /bibliography.tex
+\end{document}
